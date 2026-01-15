@@ -1,0 +1,34 @@
+.image-container {
+  position: relative;
+}
+
+.horizontal-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.vertical-container {
+  display: flex;
+  height: 85vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.textbox {
+  position: absolute;
+  width: 500;
+  height: auto;
+  z-index: 2;
+}
+
+.background {
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 500;
+  height: auto;
+}
