@@ -1,0 +1,79 @@
+.horizontal-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vertical-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 50vw;
+  height: 85vh;
+}
+
+.image-container {
+  transition: opacity 0.5s ease;
+  opacity: 1;
+}
+
+.image-container.fade-out {
+  opacity: 0;
+}
+
+.textbox {
+  position: absolute;
+  top: 50px;
+  left: 0px;
+  width: 500px;
+  height: auto;
+  z-index: 2;
+  opacity: 0;
+  animation: snapIn 1.5s steps(1, end) forwards;
+}
+
+.notes {
+  position: absolute;
+  top: 50px;
+  left: 0px;
+  width: 500px;
+  height: auto;
+  z-index: 3;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.notes.invisible {
+  opacity: 0;
+}
+
+.background {
+  position: absolute;
+  top: 50px;
+  left: 300px;
+  width: 500px;
+  height: auto;
+  z-index: 1;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes snapIn {
+  to {
+    opacity: 1;
+  }
+}

@@ -13,7 +13,7 @@ export default function Startup() {
     <div className="horizontal-container">
       <div className="vertical-container">
         <div className="centre-container">
-          <img src="pixelart/paul-1-large.png" width="500" height="500" alt="Paul" />
+          <img src="pixelart/scene1/paul-1.png" width="500" height="500" alt="Paul" /> {/* place holder */}
           <div className="buttons-container">
             <button onClick={handleStart}>Start</button>
             <button>Info</button>
