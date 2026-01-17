@@ -1,12 +1,12 @@
-"use client";
+"use client"
 import "./startup.css"
 import { useRouter } from "next/navigation"
 
 export default function Startup() {
-  const router = useRouter();
+  const router = useRouter()
 
   const handleStart = () => {
-    router.push("/cutscene1");
+    router.push("/scene1")
   }
 
   return (

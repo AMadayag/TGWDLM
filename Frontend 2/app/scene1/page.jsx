@@ -1,11 +1,13 @@
 "use client"
 import "./page.css"
 import { useState, useEffect } from "react"
+import { useRouter } from "next/navigation"
 
-export default function Cutscene1() {
+export default function Scene1() {
   const text = [
     "pixelart/scene1/paul-text/hey-emma....png",
-    "pixelart/scene1/paul-text/don't-you-want.png"
+    "pixelart/scene1/paul-text/don't-you-want.png",
+    null
   ]
 
   const paulIdle = [
@@ -15,17 +17,28 @@ export default function Cutscene1() {
     "pixelart/scene1/paul-2.png"
   ]
 
+  const router = useRouter()
+
+  const handleSceneChange = () => {
+    router.push("/scene2")
+  }
+
   const [textIndex, setTextIndex] = useState(0)
   const [bgIndex, setBgIndex] = useState(0)
 
-  function changeImage() {
-    setTextIndex((prev) => Math.min(prev + 1, text.length - 1))
+  function changeText() {
+    setTextIndex((prev) => {
+      if (prev >= (text.length - 1)) {
+        handleSceneChange()
+      }
+      return prev + 1;
+    })
   }
 
   useEffect(() => {
     const interval = setInterval(() => {
       setBgIndex((prev) => (prev + 1) % paulIdle.length)
-    }, 1000)
+    }, 800)
 
     return () => clearInterval(interval)
   }, [])
@@ -35,8 +48,8 @@ export default function Cutscene1() {
     <div className="horizontal-container">
       <div className="vertical-container">
         <div className="image-container">
-          <img src={text[textIndex]} onClick={changeImage} className="textbox"></img>
-          <img src={paulIdle[bgIndex]} className="background"></img>
+          <img src={text[textIndex]} onClick={changeText} className="textbox"></img>
+          <img src={paulIdle[bgIndex]} onClick={changeText} className="background"></img>
         </div>
       </div>
     </div>
