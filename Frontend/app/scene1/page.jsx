@@ -74,7 +74,7 @@ export default function Scene1() {
   function handleSceneChange() {
     setIsFading(true)
     setTimeout(() => {
-      router.push("/scene2")
+      router.push("/gameplay1")
     }, 500)
   }
 
@@ -103,7 +103,8 @@ export default function Scene1() {
   }
 
   function musicalCheck() {
-    if (textOrderIndex === 1) {
+    if (textOrderIndex === 1 ||
+        textOrderIndex === 2) {
       setIsMusical(true);
       return
     }
