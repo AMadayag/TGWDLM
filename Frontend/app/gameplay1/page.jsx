@@ -1,5 +1,6 @@
 "use client"
 import "../scene.css"
+import "../gameplay.css"
 import { useState, useEffect, useRef } from "react"
 // import { useRouter } from "next/navigation"
 
@@ -56,9 +57,21 @@ export default function Gameplay1() {
   }, [walking, emmaWalk.length])
   
   return(
-    <div>
-      <img src={emmaWalk[emmaWalkIndex]} />
-      <p>Press W to walk</p>
+    <div className="horizontal-container">
+      <div className="vertical-container">
+        <div className="scene-bg-container">
+          <img
+            src="pixelart/scene1/background-temp.png"
+            className="sceneBackground"
+          />
+          <div className="sprite-container">
+            <img
+              src={emmaWalk[emmaWalkIndex]}
+              className="emma-sprite"
+            />
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

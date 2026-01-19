@@ -127,7 +127,12 @@ export default function Scene1() {
   return (
     <div className="horizontal-container">
       <div className="vertical-container">
-        <div className={`image-container ${isFading ? "fade-out" : ""}`}>
+        <div className="scene-bg-container">
+          <img
+            src="pixelart/scene1/background-faded-temp.png"
+            className="sceneBackground"
+          />
+          <div className={`image-container ${isFading ? "fade-out" : ""}`}>
           <img
             src={textOrder[textOrderIndex][textIndex]}
             onClick={changeText}
@@ -143,6 +148,7 @@ export default function Scene1() {
             onClick={changeText}
             className="background"
           />
+        </div>          
         </div>
       </div>
     </div>
